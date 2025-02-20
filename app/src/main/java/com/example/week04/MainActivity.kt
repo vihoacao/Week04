@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -19,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.week04.ui.theme.Week04Theme
@@ -48,12 +50,15 @@ fun TestLayout(name: String, modifier: Modifier = Modifier) {
         Column (
             modifier = Modifier
                 .fillMaxHeight()
-                .width(120.dp)
-                .background(Color.LightGray),
-            verticalArrangement = Arrangement.Center,
+                .width(120.dp),
+
+            verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ){
-            Text(text = "Column")
+//            Text(text = "Column")
+            Image(painter = painterResource(R.drawable.dice_1),contentDescription = "Dice 1")
+            Image(painter = painterResource(R.drawable.dice_2),contentDescription = "Dice 2")
+            Image(painter = painterResource(R.drawable.dice_3),contentDescription = "Dice 3")
         }
         Column (
             modifier = Modifier
